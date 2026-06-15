@@ -23,7 +23,7 @@ const MEMORIES = [
 (function () {
   const wrap = document.getElementById('stars');
   if (!wrap) return;
-  const n = window.innerWidth < 600 ? 70 : 120;
+  const n = window.innerWidth < 600 ? 150 : 280;
   for (let i = 0; i < n; i++) {
     const s = document.createElement('div');
     s.className = 'star';
@@ -39,14 +39,47 @@ const MEMORIES = [
 }());
 
 // ----------------------------------------------------------------
-// 2b. AUDIO — hide the player if song.mp3 is missing
+// 2b. AUDIO — hide the player if song.mp3 is missing, handle autoplay on interaction
 // ----------------------------------------------------------------
 (function () {
   const audio = document.getElementById('song-audio');
   if (!audio) return;
+
   audio.addEventListener('error', function () {
     audio.classList.add('hidden');
   }, { once: true });
+
+  // Browser security blocks autoplay until a user interacts with the page.
+  // We attempt to play the song on the first user interaction (click/touch/scroll/key).
+  let started = false;
+  function startAudio() {
+    if (started) return;
+    started = true;
+    audio.play().then(() => {
+      cleanUpListeners();
+    }).catch(err => {
+      // If play fails (e.g. still blocked), reset flag so next interaction tries again
+      started = false;
+    });
+  }
+
+  function cleanUpListeners() {
+    window.removeEventListener('click', startAudio);
+    window.removeEventListener('touchstart', startAudio);
+    window.removeEventListener('scroll', startAudio);
+    window.removeEventListener('keydown', startAudio);
+  }
+
+  window.addEventListener('click', startAudio, { passive: true });
+  window.addEventListener('touchstart', startAudio, { passive: true });
+  window.addEventListener('scroll', startAudio, { passive: true });
+  window.addEventListener('keydown', startAudio, { passive: true });
+
+  // Try playing immediately (in case browser settings allow it)
+  audio.play().then(() => {
+    started = true;
+    cleanUpListeners();
+  }).catch(() => {});
 }());
 
 
