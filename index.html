@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Marian · June 16</title>
+  <meta name="description" content="A birthday message for Marian — June 16, our second sky together." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page">
+
+  <!-- Starfield -->
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <!-- Sun glow -->
+  <div class="sun" aria-hidden="true"></div>
+
+  <main>
+
+    <!-- =====================================================
+         HERO — night sky + Gemini constellation
+         ===================================================== -->
+    <header class="hero">
+      <svg
+        class="constellation"
+        viewBox="0 0 300 170"
+        aria-label="The Gemini constellation"
+        role="img"
+      >
+        <!-- Castor (left) and Pollux (right) -->
+        <path
+          class="line"
+          d="M70 22 L60 60 L52 104 L40 150
+             M60 60 L92 66
+             M52 104 L86 110
+             M210 30 L222 66 L232 110 L246 152
+             M222 66 L190 72
+             M232 110 L198 116
+             M92 66 L190 72
+             M86 110 L198 116"
+        />
+        <circle class="bright" cx="70"  cy="22"  r="3.4" />
+        <circle class="bright" cx="210" cy="30"  r="3.8" />
+        <circle cx="60"  cy="60"  r="2" /><circle cx="92"  cy="66"  r="2" />
+        <circle cx="52"  cy="104" r="2" /><circle cx="86"  cy="110" r="2" />
+        <circle cx="40"  cy="150" r="2" />
+        <circle cx="222" cy="66"  r="2" /><circle cx="190" cy="72"  r="2" />
+        <circle cx="232" cy="110" r="2" /><circle cx="198" cy="116" r="2" />
+        <circle cx="246" cy="152" r="2" />
+        <text class="twin-label" x="70"  y="12" text-anchor="middle">Castor</text>
+        <text class="twin-label" x="210" y="20" text-anchor="middle">Pollux</text>
+      </svg>
+
+      <p class="eyebrow">June 16 · our second sky</p>
+      <h1>Marian</h1>
+      <p class="greeting">
+        Happy birthday, my Gemini — the whole sky agreed to show up for you tonight.
+      </p>
+
+      <div class="scrollcue" aria-hidden="true">scroll<span></span></div>
+    </header>
+
+    <!-- =====================================================
+         SONG — A Song For Zula · Phosphorescent
+         ===================================================== -->
+    <section class="block song reveal" aria-label="Song for you">
+
+      <div class="song-card">
+        <div class="song-note" aria-hidden="true">♫</div>
+
+        <div>
+          <div class="song-title">A Song For Zula</div>
+          <div class="song-artist">Phosphorescent</div>
+        </div>
+
+        <!-- ── Local MP3 player ———————————————————————
+             Drop your MP3 into assets/music/ and rename it song.mp3
+             The player only appears when the file is loadable.
+        ─────────────────────────────────────── -->
+        <audio
+          id="song-audio"
+          class="song-audio"
+          src="assets/music/song.mp3"
+          preload="none"
+          controls
+          aria-label="A Song For Zula by Phosphorescent"
+        ></audio>
+
+        <a
+          id="listen-btn"
+          class="song-btn"
+          href="https://www.youtube.com/watch?v=8IYEWeo3mGs"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Listen to A Song For Zula by Phosphorescent on YouTube"
+        >
+          <!-- YouTube icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.2 5 12 5 12 5s-4.2 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.2 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9.5l5.4 2.5-5.4 2.5z"/>
+          </svg>
+          Listen on YouTube
+        </a>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         LETTER
+         ===================================================== -->
+    <section class="block letter reveal" aria-label="A letter for you">
+      <p class="salutation">For your eyes only,</p>
+      <p>now and then i am reminded that the time we have together is not so long. it is as fleeting as the final rays of the sun as it sets over the horizon, blessing the ocean with hues of red, pink and gold.</p>
+      <p>still i wish that you will be my light forever. my guiding moonlight, my dearest companion.</p>
+      <p class="benediction">
+        without sin, you are like the sun.<br>
+        even with sin, you are like the sun.
+      </p>
+    </section>
+
+  </main><!-- /main -->
+
+  <!-- =====================================================
+       JOURNEY — scroll-through memories constellation
+       Full-bleed past the max-width container
+       ===================================================== -->
+  <section
+    class="journey-section"
+    id="journey-section"
+    aria-label="Our journey together"
+  >
+    <!-- SVG canvas for constellation paths -->
+    <svg class="journey-canvas-svg" id="journey-svg" aria-hidden="true"></svg>
+
+    <div class="journey-header reveal">
+      <p class="eyebrow">our journey</p>
+      <h2>A constellation of us</h2>
+    </div>
+
+    <!-- Memory items will be injected here by script.js -->
+    <div class="journey-items" id="journey-items"></div>
+  </section>
+
+  <!-- =====================================================
+       CLOSING / HORIZON — flower meadow
+       ===================================================== -->
+  <section class="closing reveal" aria-label="Birthday wish">
+    <h2>Happy birthday,<br><span class="name2">Marian</span></h2>
+    <p class="two-years">our first year · your second birthday</p>
+    <div class="hint" aria-hidden="true">brush the flowers, and tap them ✧</div>
+    <div class="meadow" id="meadow" aria-hidden="true">
+      <div class="ground"></div>
+    </div>
+  </section>
+
+</div><!-- /.page -->
+
+
+<script src="script.js"></script>
+</body>
+</html>
