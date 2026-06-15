@@ -21,20 +21,40 @@ const MEMORIES = [
 // 2. STARFIELD
 // ----------------------------------------------------------------
 (function () {
+  // Main Hero/Header Starfield
   const wrap = document.getElementById('stars');
-  if (!wrap) return;
-  const n = window.innerWidth < 600 ? 150 : 280;
-  for (let i = 0; i < n; i++) {
-    const s = document.createElement('div');
-    s.className = 'star';
-    const size = Math.random() * 2 + 0.6;
-    s.style.width  = size + 'px';
-    s.style.height = size + 'px';
-    s.style.left   = (Math.random() * 100) + '%';
-    s.style.top    = (Math.random() * 100) + '%';
-    s.style.animationDelay = (Math.random() * 4) + 's';
-    s.style.opacity = (Math.random() * 0.5 + 0.3).toString();
-    wrap.appendChild(s);
+  if (wrap) {
+    const n = window.innerWidth < 600 ? 150 : 280;
+    for (let i = 0; i < n; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 2 + 0.6;
+      s.style.width  = size + 'px';
+      s.style.height = size + 'px';
+      s.style.left   = (Math.random() * 100) + '%';
+      s.style.top    = (Math.random() * 100) + '%';
+      s.style.animationDelay = (Math.random() * 4) + 's';
+      s.style.opacity = (Math.random() * 0.5 + 0.3).toString();
+      wrap.appendChild(s);
+    }
+  }
+
+  // Journey Scroll Starfield
+  const jWrap = document.getElementById('journey-stars');
+  if (jWrap) {
+    const n = window.innerWidth < 600 ? 180 : 350; // More stars because this section is very tall
+    for (let i = 0; i < n; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 2.2 + 0.6;
+      s.style.width  = size + 'px';
+      s.style.height = size + 'px';
+      s.style.left   = (Math.random() * 100) + '%';
+      s.style.top    = (Math.random() * 100) + '%';
+      s.style.animationDelay = (Math.random() * 5) + 's';
+      s.style.opacity = (Math.random() * 0.45 + 0.2).toString();
+      jWrap.appendChild(s);
+    }
   }
 }());
 

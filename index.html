@@ -21,6 +21,127 @@
   <!-- Sun glow -->
   <div class="sun" aria-hidden="true"></div>
 
+  <!-- Celestial Decorations on the sides -->
+  
+  <!-- START OF SCROLL (Top / Hero area) -->
+  <!-- Left Side: Gemini Constellation -->
+  <div class="celestial-decor decor-gemini-decor" aria-hidden="true">
+    <span class="constellation-label">Gemini</span>
+    <svg viewBox="0 0 120 120" width="150" height="150">
+      <defs>
+        <filter id="glow-gem" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur stdDeviation="2.5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      <path d="M25 25 L45 45 L65 65 L85 85 M45 45 L35 65 L25 85 M25 25 L55 20 L80 35 L95 60 L75 80 M80 35 L65 65" fill="none" stroke="rgba(255, 220, 160, 0.35)" stroke-width="1" stroke-dasharray="2 3" />
+      <circle cx="25" cy="25" r="3.2" fill="#fff" class="pulse-star" filter="url(#glow-gem)" />
+      <circle cx="55" cy="20" r="3.6" fill="#fff" class="pulse-star" filter="url(#glow-gem)" />
+      <circle cx="45" cy="45" r="1.5" fill="#fff" />
+      <circle cx="65" cy="65" r="1.5" fill="#fff" />
+      <circle cx="85" cy="85" r="1.5" fill="#fff" />
+      <circle cx="35" cy="65" r="1.5" fill="#fff" />
+      <circle cx="25" cy="85" r="2.2" fill="#fff" />
+      <circle cx="80" cy="35" r="1.5" fill="#fff" />
+      <circle cx="95" cy="60" r="2.2" fill="#fff" />
+      <circle cx="75" cy="80" r="1.5" fill="#fff" />
+    </svg>
+  </div>
+
+  <!-- Right Side: Sagittarius Constellation -->
+  <div class="celestial-decor decor-sagittarius" aria-hidden="true">
+    <span class="constellation-label">Sagittarius</span>
+    <svg viewBox="0 0 120 120" width="150" height="150">
+      <defs>
+        <filter id="glow-sag" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur stdDeviation="2.5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      <path d="M15 45 L35 30 L55 35 L75 55 L55 75 L35 70 L15 45 M35 30 L55 75 M55 35 L35 70 M75 55 L95 40 L105 55 L95 70 M95 40 L105 25" fill="none" stroke="rgba(255, 220, 160, 0.35)" stroke-width="1" stroke-dasharray="2 3" />
+      <circle cx="15" cy="45" r="1.5" fill="#fff" />
+      <circle cx="35" cy="30" r="2.5" fill="#fff" class="pulse-star" />
+      <circle cx="55" cy="35" r="1.5" fill="#fff" />
+      <circle cx="75" cy="55" r="3.5" fill="#fff" class="pulse-star" filter="url(#glow-sag)" />
+      <circle cx="55" cy="75" r="3" fill="#fff" class="pulse-star" />
+      <circle cx="35" cy="70" r="1.5" fill="#fff" />
+      <circle cx="95" cy="40" r="1.5" fill="#fff" />
+      <circle cx="105" cy="55" r="2" fill="#fff" />
+      <circle cx="95" cy="70" r="1.5" fill="#fff" />
+      <circle cx="105" cy="25" r="1" fill="#fff" />
+    </svg>
+  </div>
+
+  <!-- MID SCROLL (Song / Letter area) -->
+  <!-- Left Side: Moon near the Song Card -->
+  <div class="celestial-decor decor-moon" aria-hidden="true">
+    <svg viewBox="0 0 100 100" width="120" height="120">
+      <defs>
+        <filter id="glow-moon" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      <path d="M40 20 A 30 30 0 1 0 80 60 A 24 24 0 1 1 40 20 Z" fill="rgba(255, 230, 180, 0.12)" stroke="rgba(255, 220, 160, 0.45)" stroke-width="1.2" filter="url(#glow-moon)"/>
+      <circle cx="25" cy="30" r="1.2" fill="#fff" opacity="0.6"/>
+      <circle cx="75" cy="20" r="1.8" fill="#fff" opacity="0.8" class="pulse-star"/>
+      <circle cx="85" cy="45" r="1" fill="#fff" opacity="0.5"/>
+      <circle cx="35" cy="75" r="1.4" fill="#fff" opacity="0.7" class="pulse-star" style="animation-delay: 1.5s;"/>
+    </svg>
+  </div>
+
+  <!-- Right Side: Saturn-like Planet near the Letter -->
+  <div class="celestial-decor decor-planet" aria-hidden="true">
+    <svg viewBox="0 0 100 100" width="130" height="130">
+      <defs>
+        <filter id="glow-planet" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3.5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      <circle cx="50" cy="50" r="18" fill="rgba(255, 200, 140, 0.15)" stroke="rgba(255, 210, 150, 0.45)" stroke-width="1.2" filter="url(#glow-planet)" />
+      <path d="M34 45 C 40 48, 60 48, 66 45" fill="none" stroke="rgba(255, 210, 150, 0.25)" stroke-width="1"/>
+      <path d="M32 53 C 40 56, 60 56, 68 53" fill="none" stroke="rgba(255, 210, 150, 0.25)" stroke-width="1"/>
+      <path d="M15 50 A 38 12 -25 0 1 85 50" fill="none" stroke="rgba(255, 190, 120, 0.4)" stroke-width="2.5" filter="url(#glow-planet)"/>
+      <path d="M85 50 A 38 12 -25 0 1 15 50" fill="none" stroke="rgba(255, 190, 120, 0.4)" stroke-width="2.5" filter="url(#glow-planet)"/>
+    </svg>
+  </div>
+
+  <!-- DEEP SCROLL (Journey / Memories area — Random unnamed star maps & icons) -->
+  <!-- Left Side: Unnamed Faint Constellation 1 -->
+  <div class="celestial-decor decor-const-1" aria-hidden="true">
+    <svg viewBox="0 0 100 100" width="120" height="120">
+      <path d="M20 20 L50 35 L80 15 M50 35 L60 75 L30 85" fill="none" stroke="rgba(255, 220, 160, 0.22)" stroke-width="0.8" stroke-dasharray="2 3" />
+      <circle cx="20" cy="20" r="1.5" fill="#fff" opacity="0.6"/>
+      <circle cx="50" cy="35" r="2.5" fill="#fff" opacity="0.8" class="pulse-star"/>
+      <circle cx="80" cy="15" r="1.5" fill="#fff" opacity="0.5"/>
+      <circle cx="60" cy="75" r="2" fill="#fff" opacity="0.7" class="pulse-star" style="animation-delay: 2s;"/>
+      <circle cx="30" cy="85" r="1.5" fill="#fff" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- Right Side: Unnamed Faint Constellation 2 -->
+  <div class="celestial-decor decor-const-2" aria-hidden="true">
+    <svg viewBox="0 0 100 100" width="120" height="120">
+      <path d="M15 50 L45 30 L85 45 M45 30 L50 80" fill="none" stroke="rgba(255, 220, 160, 0.22)" stroke-width="0.8" stroke-dasharray="2 3" />
+      <circle cx="15" cy="50" r="1.5" fill="#fff" opacity="0.5"/>
+      <circle cx="45" cy="30" r="2" fill="#fff" opacity="0.8" class="pulse-star"/>
+      <circle cx="85" cy="45" r="1.5" fill="#fff" opacity="0.6"/>
+      <circle cx="50" cy="80" r="2.5" fill="#fff" opacity="0.7" class="pulse-star" style="animation-delay: 1.2s;"/>
+    </svg>
+  </div>
+
+  <!-- Left Side: Celestial Compass / Astro-Clock -->
+  <div class="celestial-decor decor-compass" aria-hidden="true">
+    <svg viewBox="0 0 100 100" width="110" height="110">
+      <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255, 220, 160, 0.2)" stroke-width="1" />
+      <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255, 220, 160, 0.15)" stroke-width="0.8" stroke-dasharray="3 4" />
+      <path d="M50 10 L50 90 M10 50 L90 50" fill="none" stroke="rgba(255, 220, 160, 0.18)" stroke-width="0.8" />
+      <path d="M30 30 L70 70 M30 70 L70 30" fill="none" stroke="rgba(255, 220, 160, 0.12)" stroke-width="0.6" stroke-dasharray="1 2" />
+      <circle cx="50" cy="50" r="2" fill="#fff" opacity="0.8" />
+    </svg>
+  </div>
+
   <main>
 
     <!-- =====================================================
@@ -126,6 +247,69 @@
     id="journey-section"
     aria-label="Our journey together"
   >
+    <!-- Starfield specifically for the journey section background -->
+    <div class="journey-stars" id="journey-stars" aria-hidden="true"></div>
+
+    <!-- Celestial background elements in photo scroll -->
+    <div class="journey-decor decor-galaxy" aria-hidden="true">
+      <svg viewBox="0 0 120 120" width="160" height="160">
+        <defs>
+          <radialGradient id="galaxy-grad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255, 220, 160, 0.35)" />
+            <stop offset="30%" stop-color="rgba(143, 77, 114, 0.18)" />
+            <stop offset="100%" stop-color="rgba(12, 7, 33, 0)" />
+          </radialGradient>
+        </defs>
+        <circle cx="60" cy="60" r="18" fill="url(#galaxy-grad)" filter="blur(1px)"/>
+        <path d="M60 60 Q 75 40, 95 50 Q 80 70, 60 60" fill="none" stroke="rgba(255, 220, 160, 0.25)" stroke-width="1.2"/>
+        <path d="M60 60 Q 45 80, 25 70 Q 40 50, 60 60" fill="none" stroke="rgba(255, 220, 160, 0.25)" stroke-width="1.2"/>
+        <path d="M60 60 Q 80 80, 70 100 Q 55 85, 60 60" fill="none" stroke="rgba(143, 77, 114, 0.25)" stroke-width="1"/>
+        <path d="M60 60 Q 40 40, 50 20 Q 65 35, 60 60" fill="none" stroke="rgba(143, 77, 114, 0.25)" stroke-width="1"/>
+        <circle cx="85" cy="40" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="35" cy="80" r="1" fill="#fff" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <div class="journey-decor decor-cluster" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="120" height="120">
+        <circle cx="50" cy="50" r="1.5" fill="#fff" opacity="0.9" class="pulse-star"/>
+        <circle cx="35" cy="40" r="1.2" fill="#fff" opacity="0.8" class="pulse-star" style="animation-delay: 0.5s;"/>
+        <circle cx="65" cy="45" r="1.8" fill="#fff" opacity="0.85" class="pulse-star" style="animation-delay: 1s;"/>
+        <circle cx="45" cy="65" r="1" fill="#fff" opacity="0.7"/>
+        <circle cx="60" cy="60" r="1.5" fill="#fff" opacity="0.8" class="pulse-star" style="animation-delay: 1.5s;"/>
+        <circle cx="55" cy="30" r="1" fill="#fff" opacity="0.5"/>
+        <circle cx="30" cy="55" r="1.6" fill="#fff" opacity="0.75" class="pulse-star" style="animation-delay: 0.8s;"/>
+        <circle cx="50" cy="50" r="22" fill="none" stroke="rgba(255,220,160,0.15)" stroke-width="0.8" stroke-dasharray="1 5" />
+      </svg>
+    </div>
+
+    <div class="journey-decor decor-shooting" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="130" height="130">
+        <defs>
+          <linearGradient id="shoot-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255, 220, 160, 0)" />
+            <stop offset="100%" stop-color="rgba(255, 230, 180, 0.45)" />
+          </linearGradient>
+        </defs>
+        <path d="M10 20 L75 85" stroke="url(#shoot-grad)" stroke-width="1.5" stroke-linecap="round" />
+        <circle cx="75" cy="85" r="2.5" fill="#fff" filter="drop-shadow(0 0 4px rgba(255,220,160,0.8))"/>
+        <circle cx="85" cy="70" r="1" fill="#fff" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <div class="journey-decor decor-golden-sun" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="130" height="130">
+        <defs>
+          <filter id="glow-sun" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        <path d="M50 15 L53 38 L75 38 L57 52 L65 75 L50 60 L35 75 L43 52 L25 38 L47 38 Z" fill="rgba(255, 230, 160, 0.2)" stroke="rgba(255, 220, 150, 0.65)" stroke-width="1.2" filter="url(#glow-sun)" />
+        <circle cx="50" cy="50" r="4" fill="#fff" />
+      </svg>
+    </div>
+
     <!-- SVG canvas for constellation paths -->
     <svg class="journey-canvas-svg" id="journey-svg" aria-hidden="true"></svg>
 
