@@ -76,7 +76,7 @@
          ===================================================== -->
     <section class="block song reveal" aria-label="Song for you">
 
-      <div class="song-card">
+      <div class="song-card" id="song-card" title="Click to play/pause">
         <div class="song-note" aria-hidden="true">♫</div>
 
         <div>
@@ -84,35 +84,21 @@
           <div class="song-artist">Phosphorescent</div>
         </div>
 
-        <!-- ── Local MP3 player ———————————————————————
-             Drop your MP3 into assets/music/ and rename it song.mp3
-             The player only appears when the file is loadable.
-        ─────────────────────────────────────── -->
         <audio
           id="song-audio"
-          class="song-audio"
           src="assets/music/song.mp3"
           preload="auto"
           autoplay
           loop
-          controls
           aria-label="A Song For Zula by Phosphorescent"
         ></audio>
 
-        <a
-          id="listen-btn"
-          class="song-btn"
-          href="https://www.youtube.com/watch?v=8IYEWeo3mGs"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Listen to A Song For Zula by Phosphorescent on YouTube"
-        >
-          <!-- YouTube icon -->
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.2 5 12 5 12 5s-4.2 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.2 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9.5l5.4 2.5-5.4 2.5z"/>
-          </svg>
-          Listen on YouTube
-        </a>
+        <div class="visualizer" id="visualizer" aria-hidden="true">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </div>
     </section>
 
@@ -157,7 +143,6 @@
        ===================================================== -->
   <section class="closing reveal" aria-label="Birthday wish">
     <h2>Happy birthday,<br><span class="name2">Marian</span></h2>
-    <p class="two-years">our first year · your second birthday</p>
     <div class="hint" aria-hidden="true">brush the flowers, and tap them ✧</div>
     <div class="meadow" id="meadow" aria-hidden="true">
       <div class="ground"></div>

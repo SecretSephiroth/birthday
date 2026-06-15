@@ -39,15 +39,45 @@ const MEMORIES = [
 }());
 
 // ----------------------------------------------------------------
-// 2b. AUDIO — hide the player if song.mp3 is missing, handle autoplay on interaction
+// 2b. AUDIO — custom player with visualizer and tap-to-toggle play/pause
 // ----------------------------------------------------------------
 (function () {
   const audio = document.getElementById('song-audio');
+  const card = document.getElementById('song-card');
+  const viz = document.getElementById('visualizer');
   if (!audio) return;
 
+  // If the audio fails to load (e.g., file missing), hide the card completely
   audio.addEventListener('error', function () {
-    audio.classList.add('hidden');
+    if (card) card.style.display = 'none';
   }, { once: true });
+
+  // Update visualizer state based on actual play state
+  function updateViz() {
+    if (viz) {
+      if (audio.paused) {
+        viz.classList.remove('playing');
+      } else {
+        viz.classList.add('playing');
+      }
+    }
+  }
+
+  audio.addEventListener('play', updateViz);
+  audio.addEventListener('playing', updateViz);
+  audio.addEventListener('pause', updateViz);
+  audio.addEventListener('ended', updateViz);
+
+  // Click card to toggle play/pause
+  if (card) {
+    card.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.play().catch(err => console.log('Playback error:', err));
+      } else {
+        audio.pause();
+      }
+    });
+  }
 
   // Browser security blocks autoplay until a user interacts with the page.
   // We attempt to play the song on the first user interaction (click/touch/scroll/key).
@@ -67,13 +97,19 @@ const MEMORIES = [
     window.removeEventListener('click', startAudio);
     window.removeEventListener('touchstart', startAudio);
     window.removeEventListener('scroll', startAudio);
+    window.removeEventListener('wheel', startAudio);
     window.removeEventListener('keydown', startAudio);
+    window.removeEventListener('mousedown', startAudio);
+    window.removeEventListener('pointerdown', startAudio);
   }
 
   window.addEventListener('click', startAudio, { passive: true });
   window.addEventListener('touchstart', startAudio, { passive: true });
   window.addEventListener('scroll', startAudio, { passive: true });
+  window.addEventListener('wheel', startAudio, { passive: true });
   window.addEventListener('keydown', startAudio, { passive: true });
+  window.addEventListener('mousedown', startAudio, { passive: true });
+  window.addEventListener('pointerdown', startAudio, { passive: true });
 
   // Try playing immediately (in case browser settings allow it)
   audio.play().then(() => {
